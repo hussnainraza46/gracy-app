@@ -1,0 +1,12 @@
+/* Gradiant Border color  */
+.gradient-border {
+  position: relative;
+  border-radius: 8px; /* change if you want */
+  padding: 2px; /* border size */
+  background: linear-gradient(to right, #D1A2D8, #8297F2);
+}
+
+.gradient-border > * {
+  background: #ffffff; /* inner background */
+  border-radius: 6px;
+}
