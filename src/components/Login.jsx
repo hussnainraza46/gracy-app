@@ -47,7 +47,7 @@ export default function Login({ onSuccess }) {
       if (onSuccess) onSuccess();
       // API call or redirect
 
-      navigate("/dashboard");   // 🔥 Dashboard page open ho jayega
+      navigate("/");   // 🔥 Dashboard page open ho jayega
     }
   };
 
@@ -144,6 +144,7 @@ export default function Login({ onSuccess }) {
             <a href="#" className="hover:underline">Help Desk</a>
             <a href="#" className="hover:underline">Refer a friend</a>
           </div>
+          <Link to="/dashboard" >Dashboard</Link>
         </div>
       </div>
     </div>

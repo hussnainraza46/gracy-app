@@ -9,8 +9,13 @@ import Forgot from "./pages/Forgot";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verify from "./pages/Verify";
-import Dashboard from "./pages/DashboardPages/Dashboard";
-import Dispatch from "./pages/DashboardPages/Dispatch";
+import Layout from "./components/Layouts";
+import Dispatch from "./pages/Dashboard/Dispatch";
+import Safety from "./pages/Dashboard/Safety";
+
+
+
+
 
 function App() {
   return (
@@ -25,10 +30,14 @@ function App() {
         <Route path="/verify" element={<Verify />} />
 
 
-        {/* Dashboard Pages Routes */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Dashboard Layout with Nested Routes */}
+        <Route path="/dashboard" element={<Layout />}>
+         
+          <Route path="dispatch" element={<Dispatch />} /> {/* /dashboard/dispatch */}
+          <Route path="safety" element={<Safety />} /> {/* /dashboard/safety */}
+          {/* Add more dashboard pages here */}
+        </Route>
 
-        <Route path="/dispatch" element={<Dispatch />} />
 
 
 

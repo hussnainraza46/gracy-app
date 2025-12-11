@@ -38,7 +38,7 @@ export default function Login() {
 
   return (
     <div
-      className="w-full h-screen flex"
+      className="w-full h-screen  flex"
       style={{
         backgroundImage: "url('/bg-image.png')",
         backgroundSize: "cover",

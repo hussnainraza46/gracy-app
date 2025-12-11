@@ -7,8 +7,8 @@ import ChatBtn from './ChatBtn';
 import ProfileDrop from './ProfileDrop';
 
 
-export default function Navbar() {
-  return (
+export default function Topbar() {
+   return (
     <div className='py-4 px-4 flex justify-between bg-[#F6F7FB]' >
       <Logo/>
       <div className="input border bg-white flex w-md items-center rounded-lg border-gray-300 gap-2 px-2 py-3">
