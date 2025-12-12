@@ -2,47 +2,33 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faShieldAlt,
-    faMap,
-    faUsers,
-    faUserTie,
-    faMoneyCheckAlt,
-    faTruck,
 
-    faSitemap,
-    faCreditCard,
-    faUser,
-    faRoad,
-    faFile,
-    faBook,
-    faTags,
-    faTruckFast
-} from '@fortawesome/free-solid-svg-icons'
+import SidebarDrop from './SidebarDrop'
+
 
 
 const links = [
-    { to: 'dispatch', label: 'Dispatch', icon: faTruckFast },
-    { to: 'safety', label: 'Safety', icon: faShieldAlt },
-    { to: '/map', label: 'Map', icon: faMap },
-    { to: '/team', label: 'Team', icon: faUsers },
-    { to: '/drivers', label: 'Drivers', icon: faUserTie },
-    { to: '/payroll', label: 'Payroll', icon: faMoneyCheckAlt },
-    { to: '/fleet', label: 'Fleet', icon: faTruck },
-    { to: '/fleet-management', label: 'Fleet Management', icon: faSitemap },
-    { to: '/card', label: 'Card', icon: faCreditCard },
-    { to: '/passenger', label: 'Passenger', icon: faUser },
-    { to: '/trips', label: 'Trips', icon: faRoad },
-    { to: '/payers', label: 'Payers', icon: faUsers },
-    { to: '/documents', label: 'Documents', icon: faFile },
-    { to: '/training', label: 'Training', icon: faBook },
-    { to: '/pricing', label: 'Pricing', icon: faTags }
+    { to: 'dispatch', label: 'Dispatch', icon: '/icons/sidebar-icon/Traced.png' },
+    { to: 'safety', label: 'Safety', icon: '/icons/sidebar-icon/safety.png' },
+    { to: '/map', label: 'Map', icon: '/icons/sidebar-icon/map.png' },
+    { to: '/team', label: 'Team', icon: '/icons/sidebar-icon/team.png' },
+    { to: '/drivers', label: 'Drivers', icon: '/icons/sidebar-icon/Driver.png' },
+    { to: '/payroll', label: 'Payroll', icon: '/icons/sidebar-icon/payroll.png' },
+    { to: '/fleet', label: 'Fleet', icon: '/icons/sidebar-icon/fleet.png' },
+    { to: '/fleet-management', label: 'Fleet Management', icon: '/icons/sidebar-icon/fleet-meet.png' },
+    { to: '/card', label: 'Card', icon: '/icons/sidebar-icon/card.png' },
+    { to: '/passenger', label: 'Passenger', icon: '/icons/sidebar-icon/passenger.png' },
+    { to: '/trips', label: 'Trips', icon: '/icons/sidebar-icon/tips.png' },
+    { to: '/payers', label: 'Payers', icon: '/icons/sidebar-icon/payer.png' },
+    { to: '/documents', label: 'Documents', icon: '/icons/sidebar-icon/docoment.png' },
+    { to: '/training', label: 'Training', icon: '/icons/sidebar-icon/training.png' },
+    { to: '/pricing', label: 'Pricing', icon: '/icons/sidebar-icon/pricing.png' }
 ]
 
 
 export default function Sidebar() {
     return (
-        <aside className="w-64  h-full bg-[#F6F7FB] p-4 flex flex-col">
+        <aside className="w-64 flex flex-col  justify-between h-full bg-[#F6F7FB] p-4 flex flex-col">
 
             <nav className="space-y-2">
                 {links.map((item) => (
@@ -52,15 +38,16 @@ export default function Sidebar() {
                         className={({ isActive }) =>
                             `flex items-center gap-3 w-full px-4 py-3 text-[15px] font-regular rounded-[10px]
     transition-all duration-200 ` +
-                            (isActive ? 'text-white bg-gradient-to-r from-[#D1A2D8] to-[#8297F2]' : 'text-black hover:bg-gray-200')
+                            (isActive ? 'text-white bg-gradient-to-r from-[#8297F2] to-[#D1A2D8]' : 'text-black hover:bg-gray-200')
                         }
                         end={item.to === '/'}
                     >
-                        <FontAwesomeIcon icon={item.icon} className="w-[24px] h-[24px]" />
+                        <img src={item.icon}  alt={item.label} className="w-[24px] h-[24px]" />
                         <span>{item.label}</span>
                     </NavLink>
                 ))}
             </nav>
+           <SidebarDrop />
         </aside>
     )
 }

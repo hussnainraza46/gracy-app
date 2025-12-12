@@ -144,7 +144,7 @@ export default function Login({ onSuccess }) {
             <a href="#" className="hover:underline">Help Desk</a>
             <a href="#" className="hover:underline">Refer a friend</a>
           </div>
-          <Link to="/dashboard" >Dashboard</Link>
+          <Link to="/dashboard/dispatch" >Dashboard</Link>
         </div>
       </div>
     </div>
