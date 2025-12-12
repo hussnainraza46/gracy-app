@@ -3,6 +3,7 @@ import DateMonth from './DateMonth'
 import DateNavigator from './DateNavigator'
 import FilterButton from './FilterButton'
 import StatusSummary from './StatusSummary'
+import TimeGrid from './TimeGrid'
 
 export default function DisCalenderTable() {
     return (
@@ -13,6 +14,10 @@ export default function DisCalenderTable() {
                     <DateNavigator/>
                     <FilterButton/>
                     <StatusSummary/>
+                </div>
+                <hr className='text-gray-300'/>
+                <div className="div pt-4 pl-6 pb-4 pr-8">
+                    <TimeGrid/>
                 </div>
 
                 <hr className='text-gray-300' />
