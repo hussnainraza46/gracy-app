@@ -10,7 +10,7 @@ export default function Layout() {
             
             <div className="flex  flex-1 overflow-hidden">
                 <Sidebar />
-                <main className="flex-1 overflow-y-auto ">
+                <main className="ml-68 mt-22 h-[calc(100vh-4rem)] flex-1 overflow-y-auto ">
                     <Outlet />
                 </main>
             </div>

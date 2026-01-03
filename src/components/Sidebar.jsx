@@ -28,9 +28,9 @@ const links = [
 
 export default function Sidebar() {
     return (
-        <aside className="w-64 flex flex-col  justify-between h-full bg-[#F6F7FB] p-4 flex flex-col">
+        <aside className="fixed top-18 left-0 z-10 w-64 flex flex-col  justify-between h-full bg-[#F6F7FB] pb-20 p-4 flex flex-col">
 
-            <nav className="space-y-2">
+            <nav className="space-y-1">
                 {links.map((item) => (
                     <NavLink
                         key={item.to}

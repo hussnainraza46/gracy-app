@@ -15,9 +15,11 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.1.17",
+    "lucide-react": "^0.562.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
+    "recharts": "^3.6.0",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
