@@ -90,7 +90,7 @@ export default function Toolbar() {
                         {/* Three Dots Button */}
                         <button
                             onClick={() => setShowDotsMenu(!showDotsMenu)}
-                            className="dot-btn"
+                            className="dot-btn border border-gradient-to-r from-[#8297F2] to-[#D1A2D8] px-2 py-1.5 rounded-lg"
                         >
                             <FontAwesomeIcon icon={faEllipsisH} />
                         </button>

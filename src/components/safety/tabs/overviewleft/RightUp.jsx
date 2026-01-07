@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
+
+import SelectedDropdown from "../../../Common/SelectedDrop";
 
 export default function RightUp() {
+   const [showExportModal, setShowExportModal] = useState(false);
+   const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     // Main container for the upper-right section
     <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-xs w-full">
@@ -29,14 +34,71 @@ export default function RightUp() {
       </div>
 
       {/* --- 2. Export Button --- */}
-      <button 
+      <button   onClick={() => setShowExportModal(true)}
         className="text-white font-medium py-3 px-6 rounded-xl shadow-lg transition duration-150 ease-in-out"
         // Applying the gradient color visible in the image
         style={{ backgroundImage: 'linear-gradient(to right, #8297F2, #D1A2D8)' }}
       >
         Export
       </button>
+
+
+       {/* FULL PAGE EXPORT MODAL */}
+                          {showExportModal && (
+                              <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+                                  <div className="bg-white w-[90%] max-w-xl rounded-xl  relative">
+                                      <div className="border-b border-[#00000024] py-4 px-4">
+                                          <h2 className="text-[20px] font-semibold ">
+                                              Export
+                                          </h2>
+      
+                                          <p className="text-[17px] text-gray-600 ">
+                                              Specify options for exporting your report
+                                          </p>
+      
+                                      </div>
+                                      <div className="p-4 ">
+                                          <h2>Report type</h2>
+                                          <SelectedDropdown options={["Event Resolution Report", "Option 2", "Option 3", "Option 4", "Option 5"]}
+                                              defaultValue="Event Resolution Report"
+                                              onChange={(value) => console.log("Selected:", value)} />
+                                          <h2 className="py-2">Export data</h2>
+                                          <div className="div flex items-start  gap-2">
+                                              <input type="radio" name="" id="" />
+                                             
+      
+      
+      
+                                             
+                                              <div className="div">
+                                                  <h2 className="text-[17px] font-medium">By Coach</h2>
+                                                  <p className="text-[14px]">Show a row for every coach</p>
+                                              </div>
+                                          </div>
+                                      </div>
+      
+      
+      
+                                      <div className="flex gap-3">
+                                          <button className="gradient-btn px-4 py-2 rounded-lg text-black text-sm">
+                                              Export PDF
+                                          </button>
+                                          <button className="gradient-btn px-4 py-2 rounded-lg text-black text-sm">
+                                              Export CSV
+                                          </button>
+      
+                                      </div>
+                                      <button
+                                          onClick={() => setShowExportModal(false)}
+                                          className=" top-4 right-4 text-gray-500"
+                                      >
+                                          Cancel
+                                      </button>
+                                  </div>
+                              </div>
+                          )}
       
     </div>
+
   );
 }
